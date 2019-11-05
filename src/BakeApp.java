@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
@@ -5,6 +6,7 @@ import java.util.Scanner;
 public class BakeApp {
 
     public static void main(String[] args) {
+
         Scanner input = new Scanner(System.in);
 
         System.out.println("Welcome to Brookley's Better Bakery App!");
@@ -35,6 +37,14 @@ public class BakeApp {
         BakedGoodsData pieCrust = new BakedGoodsData("Humble Pie", 12.99, "11/2/19", 7, "soy");
 
         Collections.addAll(bakedGoods, bananaBread, cinnamonBread, wheatBread, whiteBread, peanutButterBread, raisinBread, soyMuffins, cinnamonRolls, savoryRolls, blueberryMuffins, pizzaCrust, frenchBread, cake, donut, pastry, pieCrust);
+
+        String[] Restrictions = new String[4];
+                Restrictions[0] = "gluten";
+                Restrictions[1] = "peanut";
+                Restrictions[2] = "soy";
+                Restrictions[3] = "dairy";
+
+
         BakeGoodsDB myGoods = new BakeGoodsDB();
         myGoods.setBakedGoods(bakedGoods);
         myGoods.displayData(userInput);
@@ -42,3 +52,4 @@ public class BakeApp {
 
 
 }
+
