@@ -60,4 +60,11 @@ public class BakedGoodsData {
     public void setDietaryRestriction(String dietaryRestriction) {
         this.dietaryRestriction = dietaryRestriction;
     }
+
+    public void displayGoods() {
+        System.out.println("Name: " + name);
+        System.out.println("Price: " + price);
+        System.out.println("Date: " + date);
+        System.out.println("Quantity: " + quantity);
+    }
 }

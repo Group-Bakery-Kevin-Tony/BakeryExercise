@@ -12,7 +12,7 @@ public class BakeApp {
 
         System.out.println("To search for foods that you can eat, please enter the name of the diet restriction: ");
         String userInput = input.nextLine().trim().toLowerCase();
-        BakeGoodsDB.displayData(userInput);
+
 
 
         ArrayList<BakedGoodsData> bakedGoods = new ArrayList<>();
@@ -35,7 +35,10 @@ public class BakeApp {
         BakedGoodsData pieCrust = new BakedGoodsData("Humble Pie", 12.99, "11/2/19", 7, "soy");
 
         Collections.addAll(bakedGoods, bananaBread, cinnamonBread, wheatBread, whiteBread, peanutButterBread, raisinBread, soyMuffins, cinnamonRolls, savoryRolls, blueberryMuffins, pizzaCrust, frenchBread, cake, donut, pastry, pieCrust);
-
-
+        BakeGoodsDB myGoods = new BakeGoodsDB();
+        myGoods.setBakedGoods(bakedGoods);
+        myGoods.displayData(userInput);
     }
+
+
 }

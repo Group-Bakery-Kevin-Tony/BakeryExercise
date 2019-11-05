@@ -5,7 +5,7 @@ import java.util.Collections;
 public class BakeGoodsDB {
     private ArrayList<BakedGoodsData> bakedGoods;
 
-    private BakeGoodsDB(){};
+    public BakeGoodsDB(){};
 
     public ArrayList<BakedGoodsData> getBakedGoods() {
         return bakedGoods;
@@ -18,30 +18,41 @@ public class BakeGoodsDB {
 
 
 
+
     //enhanced For Loop that calls the different objects that dont contain this restriction.
 
 
 
 
-    public static void displayData(String userInput) {
-        for( Object bakedItems: bakedGoods ) {
+    public void displayData(String userInput) {
+        for( BakedGoodsData bakedItems: bakedGoods ) {
             switch (userInput) {
                 case "gluten":
-                        //call objects from arrayList
+                    checkRestriction(bakedItems, userInput);
+                    break;
                 case "peanut":
-                    //call objects from bakedGoodsDB that do not contain this
+                    checkRestriction(bakedItems, userInput);
+                    break;
                 case "soy":
-                    //call objects from bakedGoodsDB that do not contain this
+                    checkRestriction(bakedItems, userInput);
+                    break;
                 case "dairy":
-                    //call objects from bakedGoodsDB that do not contain this
+                    checkRestriction(bakedItems, userInput);
+                    break;
                 case "all":
-                    //calls all objects.
+                    bakedItems.displayGoods();
+                    break;
                 default:
                     System.out.println("invalid diet restriction");
+                    break;
 
             }
         }
 }
-
+    private void checkRestriction(BakedGoodsData bakedItems, String userInput) {
+        if(!bakedItems.getDietaryRestriction().equalsIgnoreCase(userInput)) {
+            bakedItems.displayGoods();
+        }
+    }
 
 }
